@@ -14,46 +14,46 @@
                     <div class="container-fluid mt-4" id="addProd">
                         <div class="row">
                             <div class="col-3 offset-1">
-                                <h3 class="mt-4 text-info">Add / Update Student</h3>
+                                <h3 class="mt-4 text-info display-4">Student</h3>
                                 <hr>
                                 <form>
                                     <div class="form-group">
-                                        <label for="inputAddress2">Student ID</label>
+                                        <label for="inputAddress2" class="font-weight-bold">Student ID</label>
                                         <input type="text" class="form-control" id="inputAddress2">
                                         <small class="form-text text-muted">Issued by organization</small>
                                     </div>
                                     <div class="form-row">
                                         <div class="form-group col-md-6">
-                                            <label for="inputEmail4">School ID</label>
+                                            <label for="inputEmail4" class="font-weight-bold">School ID</label>
                                             <input type="email" class="form-control" id="inputEmail4">
                                             <small class="form-text text-muted">Issued by organization</small>
                                         </div>
                                         <div class="form-group col-md-6">
-                                            <label for="inputPassword4">Grade</label>
+                                            <label for="inputPassword4" class="font-weight-bold">Grade</label>
                                             <input type="password" class="form-control" id="inputPassword4">
                                             <small class="form-text text-muted">Number</small>
                                         </div>
                                     </div>
                                     <div class="form-row">
                                         <div class="form-group col-md-6">
-                                            <label for="inputEmail4">Height</label>
+                                            <label for="inputEmail4" class="font-weight-bold">Height</label>
                                             <input type="email" class="form-control" id="inputEmail4">
                                             <small class="form-text text-muted">Height in centimeters</small>
                                         </div>
                                         <div class="form-group col-md-6">
-                                            <label for="inputPassword4">Weight</label>
+                                            <label for="inputPassword4" class="font-weight-bold">Weight</label>
                                             <input type="password" class="form-control" id="inputPassword4">
                                             <small class="form-text text-muted">Weight in kilograms</small>
                                         </div>
                                     </div>
                                     <div class="form-row">
                                         <div class="form-group col-md-6">
-                                            <label for="inputCity">Age</label>
+                                            <label for="inputCity" class="font-weight-bold">Age</label>
                                             <input type="text" class="form-control" id="inputCity">
                                             <small class="form-text text-muted">Years</small>
                                         </div>
                                         <div class="form-group col-md-6">
-                                            <label for="inputState">Gender</label>
+                                            <label for="inputState" class="font-weight-bold">Gender</label>
                                             <select id="inputState" class="form-control">
                                                 <option selected>Choose...</option>
                                                 <option>Male</option>
@@ -66,7 +66,7 @@
                                 </form>
                             </div>
                             <div class="col-7 offset-1 mt-4">
-                                <h1 class="text-info">Student Info</h1>
+                                <h1 class="text-info display-4">Student Info</h1>
                                 <table class="table">
                                     <thead>
                                       <tr>
@@ -90,7 +90,52 @@
                     </div>
                 </div>
                 <div class="col-12">
-                    
+                    <div class="container-fluid mt-4" id="addProd">
+                        <div class="row">
+                            <div class="col-3 offset-1">
+                                <h3 class="mt-4 text-info display-4">Packets</h3>
+                                <hr>
+                                <form>
+                                    <div class="form-row">
+                                        <div class="form-group col-md-6">
+                                            <label for="inputState" class="font-weight-bold">Food Packets</label>
+                                            <select id="inputState" class="form-control">
+                                                <option selected>Choose...</option>
+                                                <option>Protein</option>
+                                                <option>Fat</option>
+                                                <option>Carbohydrate</option>
+                                                <option>Vitamins</option>
+                                                <option>Minerals</option>
+                                            </select>
+                                        </div>
+                                        <div class="form-group col-md-6">
+                                            <label for="inputPassword4" class="font-weight-bold">Quantity</label>
+                                            <input type="password" class="form-control" id="inputPassword4">
+                                            <small class="form-text text-muted">Number</small>
+                                        </div>
+                                    </div>
+                                    <button type="submit" class="btn btn-block btn-outline-info">Add / Update</button>
+                                </form>
+                            </div>
+                            <div class="col-3 offset-1 mt-4">
+                                <h1 class="text-info display-4">Stock</h1>
+                                <table class="table">
+                                    <thead>
+                                      <tr>
+                                        <th scope="col">Food Packets</th>
+                                        <th scope="col">Quantity</th>
+                                      </tr>
+                                    </thead>
+                                    <tbody id="probDis">
+                                        
+                                    </tbody>
+                                </table>
+                                <nav class="d-none">
+                                    <ul class="pagination pagination-sm"></ul>
+                                </nav>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
