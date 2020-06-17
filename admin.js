@@ -64,7 +64,7 @@ function addPage(params) {
         createPage()
     }
 }
-// {studentID: studentID, schoolID: schoolID, grade: grade, height: height, weight: weight, age: age, gender: gender, bmi: bmi})
+// [{studentID: studentID, schoolID: schoolID, grade: grade, height: height, weight: weight, age: age, gender: gender, bmi: bmi}])
 
 function dispProd(list) {
     var tbody = document.querySelector("#probDis")
@@ -100,7 +100,8 @@ function createPage(params) {
         var li = document.createElement("li")
         var btn = document.createElement("button")
         li.setAttribute("class", "page-item")
-        btn.setAttribute("class", "page-link")
+        btn.setAttribute("class", "page-link text-success font-weight-bold")
+
         btn.addEventListener("click", function(params) {
             activePage = Number(event.target.textContent)
             chooseItems()
