@@ -16,49 +16,49 @@
                             <div class="col-3 offset-1">
                                 <h3 class="mt-4 text-info display-4">Student</h3>
                                 <hr>
-                                <form>
+                                <form id="addStudent">
                                     <div class="form-group">
-                                        <label for="inputAddress2" class="font-weight-bold">Student ID</label>
-                                        <input type="text" class="form-control" id="inputAddress2">
+                                        <label for="studentID" class="font-weight-bold">Student ID</label>
+                                        <input type="text" class="form-control" id="studentID">
                                         <small class="form-text text-muted">Issued by organization</small>
                                     </div>
                                     <div class="form-row">
                                         <div class="form-group col-md-6">
-                                            <label for="inputEmail4" class="font-weight-bold">School ID</label>
-                                            <input type="email" class="form-control" id="inputEmail4">
+                                            <label for="schoolID" class="font-weight-bold">School ID</label>
+                                            <input type="text" class="form-control" id="schoolID">
                                             <small class="form-text text-muted">Issued by organization</small>
                                         </div>
                                         <div class="form-group col-md-6">
-                                            <label for="inputPassword4" class="font-weight-bold">Grade</label>
-                                            <input type="password" class="form-control" id="inputPassword4">
+                                            <label for="grade" class="font-weight-bold">Grade</label>
+                                            <input type="text" class="form-control" id="grade">
                                             <small class="form-text text-muted">Number</small>
                                         </div>
                                     </div>
                                     <div class="form-row">
                                         <div class="form-group col-md-6">
-                                            <label for="inputEmail4" class="font-weight-bold">Height</label>
-                                            <input type="email" class="form-control" id="inputEmail4">
+                                            <label for="height" class="font-weight-bold">Height</label>
+                                            <input type="text" class="form-control" id="height">
                                             <small class="form-text text-muted">Height in centimeters</small>
                                         </div>
                                         <div class="form-group col-md-6">
-                                            <label for="inputPassword4" class="font-weight-bold">Weight</label>
-                                            <input type="password" class="form-control" id="inputPassword4">
+                                            <label for="weight" class="font-weight-bold">Weight</label>
+                                            <input type="text" class="form-control" id="weight">
                                             <small class="form-text text-muted">Weight in kilograms</small>
                                         </div>
                                     </div>
                                     <div class="form-row">
                                         <div class="form-group col-md-6">
-                                            <label for="inputCity" class="font-weight-bold">Age</label>
-                                            <input type="text" class="form-control" id="inputCity">
+                                            <label for="age" class="font-weight-bold">Age</label>
+                                            <input type="text" class="form-control" id="age">
                                             <small class="form-text text-muted">Years</small>
                                         </div>
                                         <div class="form-group col-md-6">
-                                            <label for="inputState" class="font-weight-bold">Gender</label>
-                                            <select id="inputState" class="form-control">
-                                                <option selected>Choose...</option>
-                                                <option>Male</option>
-                                                <option>Female</option>
-                                                <option>Other</option>
+                                            <label for="gender" class="font-weight-bold">Gender</label>
+                                            <select id="gender" class="form-control">
+                                                <option value="">Choose...</option>
+                                                <option value="Male">Male</option>
+                                                <option value="Female">Female</option>
+                                                <option value="Other">Other</option>
                                             </select>
                                         </div>
                                     </div>
@@ -141,6 +141,7 @@
         </div>
     </div>
 
+    <script src="admin.js"></script>
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
