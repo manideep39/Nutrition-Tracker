@@ -67,7 +67,7 @@
                             </div>
                             <div class="col-7 offset-1 mt-4">
                                 <h1 class="text-info display-4">Student Info</h1>
-                                <table class="table">
+                                <table class="table table-hover">
                                     <thead>
                                       <tr>
                                         <th scope="col">School ID</th>
@@ -93,24 +93,22 @@
                     <div class="container-fluid mt-4" id="addProd">
                         <div class="row">
                             <div class="col-3 offset-1">
-                                <h3 class="mt-4 text-info display-4">Packets</h3>
+                                <h3 class="mt-4 text-info display-4">Packet</h3>
                                 <hr>
-                                <form>
+                                <form id="addPacket">
                                     <div class="form-row">
                                         <div class="form-group col-md-6">
-                                            <label for="inputState" class="font-weight-bold">Food Packets</label>
-                                            <select id="inputState" class="form-control">
-                                                <option selected>Choose...</option>
-                                                <option>Protein</option>
-                                                <option>Fat</option>
-                                                <option>Carbohydrate</option>
-                                                <option>Vitamins</option>
-                                                <option>Minerals</option>
+                                            <label for="packet" class="font-weight-bold">Food Packet</label>
+                                            <select id="packet" class="form-control">
+                                                <option value="">Choose...</option>
+                                                <option value="Protein">Protein</option>
+                                                <option value="Fat">Fat</option>
+                                                <option value="Carbohydrate">Carbohydrate</option>
                                             </select>
                                         </div>
                                         <div class="form-group col-md-6">
-                                            <label for="inputPassword4" class="font-weight-bold">Quantity</label>
-                                            <input type="password" class="form-control" id="inputPassword4">
+                                            <label for="quantity" class="font-weight-bold">Quantity</label>
+                                            <input type="text" class="form-control" id="quantity">
                                             <small class="form-text text-muted">Number</small>
                                         </div>
                                     </div>
@@ -126,8 +124,19 @@
                                         <th scope="col">Quantity</th>
                                       </tr>
                                     </thead>
-                                    <tbody id="probDis">
-                                        
+                                    <tbody id="stockTable">
+                                        <tr>
+                                            <th scope="row">Protein</th>
+                                            <td id="protein"></td>
+                                        </tr>
+                                        <tr>
+                                            <th scope="row">Fat</th>
+                                            <td id="fat"></td>
+                                        </tr>
+                                        <tr>
+                                            <th scope="row">Carbohydrate</th>
+                                            <td id="carbs"></td>
+                                        </tr>
                                     </tbody>
                                 </table>
                                 <nav class="d-none">

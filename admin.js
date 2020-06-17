@@ -1,12 +1,14 @@
 
-var studentInfo = JSON.parse(localStorage.getItem("studentInfo") || [])
+var studentInfo = JSON.parse(localStorage.getItem("studentInfo"))
+var stock = JSON.parse(localStorage.getItem("stock"))
 var activePage = 1
 
 window.addEventListener("load", function(params) {
-    var addBtn = document.querySelector("button")
-    addBtn.addEventListener("click", addStudent)
+    var addBtn = document.querySelectorAll("button")
+    addBtn[0].addEventListener("click", addStudent)
+    addBtn[1].addEventListener("click", addPacket)
     renderDOM()
-
+    showStock()
 })
 
 function addStudent(params) {
@@ -22,10 +24,7 @@ function addStudent(params) {
     studentInfo.push({studentID: studentID, schoolID: schoolID, grade: grade, height: height, weight: weight, age: age, gender: gender, bmi: bmi})
     localStorage.setItem("studentInfo", JSON.stringify(studentInfo))
     var inputs = document.querySelectorAll("#addStudent input")
-
-    // for (var x in inputs) {
-    //     inputs[x].value = ""
-    // }
+    document.getElementById("addStudent").reset()
     renderDOM()
 } 
 
@@ -43,7 +42,6 @@ function calBMI(height, weight) {
     } else {
         return "Undefined"
     }
-
 }
 
 function renderDOM(params) {
@@ -52,26 +50,23 @@ function renderDOM(params) {
 }
 
 function chooseItems(params) {
-    var end = activePage * 10
-    var start = end - 10
+    var end = activePage * 8
+    var start = end - 8
     var list = studentInfo.slice(start, end)
     dispProd(list)
 }
 
 function addPage(params) {
 
-    if (studentInfo.length > 5) {
-        console.log("more than 5")
+    if (studentInfo.length > 8) {
         var nav = document.querySelector("nav")
         nav.removeAttribute("class")
         createPage()
     }
-
 }
 // {studentID: studentID, schoolID: schoolID, grade: grade, height: height, weight: weight, age: age, gender: gender, bmi: bmi})
 
 function dispProd(list) {
-
     var tbody = document.querySelector("#probDis")
     tbody.innerHTML = ""
 
@@ -95,13 +90,13 @@ function dispProd(list) {
 
     var table = document.querySelector("table")
     table.append(tbody)
-
 }
 
 function createPage(params) {
     var ul = document.querySelector("nav > ul")
     ul.innerHTML = ""
-    for (var i = 1; i <= Math.ceil(studentInfo.length / 10); i++) {
+
+    for (var i = 1; i <= Math.ceil(studentInfo.length / 8); i++) {
         var li = document.createElement("li")
         var btn = document.createElement("button")
         li.setAttribute("class", "page-item")
@@ -114,4 +109,25 @@ function createPage(params) {
         li.append(btn)
         ul.append(li)
     }
+}
+
+function addPacket(params) {
+    event.preventDefault()
+    var packet = document.getElementById("packet").value
+    var quantity = document.getElementById("quantity").value
+    stock[packet] ? stock[packet] += Number(quantity) : stock[packet] = Number(quantity)
+    localStorage.setItem("stock", JSON.stringify(stock))
+    var inputs = document.querySelectorAll("#addPacket input")
+
+    document.getElementById("addPacket").reset();
+    showStock()
+} 
+
+function showStock() {
+    var protein = document.getElementById("protein")
+    var fat = document.getElementById("fat")
+    var carbs = document.getElementById("carbs")
+    protein.textContent = stock.Protein
+    fat.textContent = stock.Fat
+    carbs.textContent = stock.Carbohydrate
 }
