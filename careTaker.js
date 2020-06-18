@@ -5,8 +5,8 @@ window.addEventListener("load", function(){
     var studentInfo = JSON.parse(localStorage.getItem("studentInfo"))
     var schoolSet = findSchools(studentInfo)
     createSchoolCard(schoolSet)
-    // var schoolGrade = findGrades(schoolSet, studentInfo)
-    // findStudents(schoolGrade)
+    var quotaZero = document.getElementById("quotaZero")
+    quotaZero.addEventListener("click", updateStock)
 })
 
 // [{studentID: studentID, schoolID: schoolID, grade: grade, height: height, weight: weight, age: age, gender: gender, bmi: bmi}])
@@ -144,7 +144,7 @@ function dispProd(list) {
     for (var i = 0; i < list.length; i++) {
         var tr = document.createElement("tr")
         tr.addEventListener("click", function(params) {
-            studentCard(list)
+            studentCard()
         })
         tr.style.cursor = "pointer"
         var studentID = document.createElement("td")
@@ -189,12 +189,42 @@ function createPage(arr) {
 }
 
 
-function studentCard(arr) {
-    // console.log(arr)
-    // console.log(event.currentTarget.lastChild)
-    // console.log(event.currentTarget)
+function studentCard() {
     var studentCard = document.getElementById("studentPro")
     studentCard.setAttribute("class", "container mt-5")
-    // console.log(studentCard)
-
+    var studentId = document.getElementById("stPrId")
+    var quota = document.getElementById("stPrQuo")
+    var nextMeal = document.getElementById("stPrNxtMeal") 
+    var history = document.getElementById("StPrhist") 
+    studentId.textContent = event.currentTarget.children[1].innerHTML
+    
+    if (event.currentTarget.lastChild.innerHTML == "Underweight") {
+        quota.textContent = "F3-P3-C3"
+    }
+    // rest of the conditions has to be filled 
+    
 }
+
+function updateStock(params) {
+    var quota = document.getElementById("stPrQuo").textContent
+    var stock = JSON.parse(localStorage.getItem("stock"))
+    var quotaArr = quota.split("-")
+    var protein = Number(quotaArr[0][1])
+    var fat = Number(quotaArr[1][1])
+    var carb = Number(quotaArr[2][1])
+    stock.Protein -= protein
+    stock.Fat -= fat
+    stock.Carbohydrate -= carb
+    stock = JSON.stringify(stock)
+    localStorage.setItem("stock", stock)
+    document.getElementById("stPrQuo").textContent = "00"
+}
+
+// function updateNextHistory() {
+//     var nxtMeal = document.getElementById("stPrNxtMeal").textContent
+//     var hist = document.getElementById("StPrhist").textContent
+//     const date = new Date();
+//     const today = date.getDate();
+
+    
+// }
