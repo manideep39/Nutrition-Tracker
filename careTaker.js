@@ -190,6 +190,9 @@ function createPage(arr) {
 
 
 function studentCard() {
+    var quotaZero = document.getElementById("quotaZero")
+    quotaZero.setAttribute("class", "col-sm-12 btn")
+
     var studentCard = document.getElementById("studentPro")
     studentCard.setAttribute("class", "container mt-5")
     var studentId = document.getElementById("stPrId")
@@ -218,13 +221,14 @@ function updateStock(params) {
     stock = JSON.stringify(stock)
     localStorage.setItem("stock", stock)
     document.getElementById("stPrQuo").textContent = "00"
+    updateNextHistory()
 }
 
-// function updateNextHistory() {
-//     var nxtMeal = document.getElementById("stPrNxtMeal").textContent
-//     var hist = document.getElementById("StPrhist").textContent
-//     const date = new Date();
-//     const today = date.getDate();
-
-    
-// }
+function updateNextHistory() {
+    const date = new Date();
+    const today = date.getDate();
+    document.getElementById("stPrNxtMeal").textContent = today + 7
+    document.getElementById("StPrhist").textContent = today
+    var quotaZero = document.getElementById("quotaZero")
+    quotaZero.setAttribute("class", "col-sm-12 btn disabled")
+}
