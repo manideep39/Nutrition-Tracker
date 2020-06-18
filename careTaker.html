@@ -8,8 +8,33 @@
     <link rel="stylesheet" href="careTaker.css">
 </head>
 <body>
-    <div class="container mt-5">
+    <div class="container mt-5" id="schoolCont">
         <div class="row" id="schoolCard"></div>
+    </div>
+    <div class="container mt-5" id="studentCont">
+        <div class="row" id="studentCard">
+            <div class="col-12">
+                <h1 class="text-success display-4 font-weight-bold">Student list</h1>
+                <table class="table table-hover">
+                    <thead>
+                      <tr>
+                        <th scope="col">School ID</th>
+                        <th scope="col">Student ID</th>
+                        <th scope="col">Grade</th>
+                        <th scope="col">Gender</th>
+                        <!-- <th scope="col">Age</th> -->
+                        <th scope="col">BMI Categorie</th>
+                      </tr>
+                    </thead>
+                    <tbody id="probDis">
+                        
+                    </tbody>
+                </table>
+                <nav class="d-none text-success">
+                    <ul class="pagination pagination-sm"></ul>
+                </nav>
+            </div>
+        </div>
     </div>
 
 

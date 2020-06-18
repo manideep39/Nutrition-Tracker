@@ -84,7 +84,7 @@ function dispProd(list) {
         age.textContent = list[i].age
         gender.textContent = list[i].gender
         bmi.textContent = list[i].bmi
-        tr.append(studentID, schoolID, grade, gender, age, bmi)
+        tr.append(schoolID, studentID, grade, gender, age, bmi)
         tbody.append(tr)
     }
 
