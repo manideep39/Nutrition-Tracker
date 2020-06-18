@@ -143,7 +143,9 @@ function dispProd(list) {
     tbody.innerHTML = ""
     for (var i = 0; i < list.length; i++) {
         var tr = document.createElement("tr")
-        tr.addEventListener("click", studentCard)
+        tr.addEventListener("click", function(params) {
+            studentCard(list)
+        })
         tr.style.cursor = "pointer"
         var studentID = document.createElement("td")
         var schoolID = document.createElement("td")
@@ -187,8 +189,12 @@ function createPage(arr) {
 }
 
 
-function studentCard() {
-    console.log(event.currentTarget.lastChild)
-
+function studentCard(arr) {
+    // console.log(arr)
+    // console.log(event.currentTarget.lastChild)
+    // console.log(event.currentTarget)
+    var studentCard = document.getElementById("studentPro")
+    studentCard.setAttribute("class", "container mt-5")
+    // console.log(studentCard)
 
 }
