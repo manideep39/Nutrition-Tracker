@@ -1,15 +1,21 @@
-
-var studentInfo = JSON.parse(localStorage.getItem("studentInfo"))
-var stock = JSON.parse(localStorage.getItem("stock"))
-var activePage = 1
-
 window.addEventListener("load", function(params) {
+    var studentInfo = [{"studentID":"1001","schoolID":"101","grade":"6","height":"90","weight":"42","age":"14","gender":"Male","bmi":"Obese"},{"studentID":"1002","schoolID":"101","grade":"6","height":"90","weight":"30","age":"14","gender":"Male","bmi":"Obese"},{"studentID":"1002","schoolID":"101","grade":"6","height":"90","weight":"30","age":"16","gender":"Male","bmi":"Obese"},{"studentID":"1004","schoolID":"101","grade":"6","height":"120","weight":"40","age":"15","gender":"Male","bmi":"Overweight"},{"studentID":"1004","schoolID":"102","grade":"6","height":"120","weight":"40","age":"15","gender":"Male","bmi":"Overweight"},{"studentID":"1004","schoolID":"103","grade":"6","height":"120","weight":"40","age":"15","gender":"Male","bmi":"Overweight"},{"studentID":"1003","schoolID":"103","grade":"6","height":"120","weight":"40","age":"15","gender":"Male","bmi":"Overweight"},{"studentID":"1010","schoolID":"105","grade":"8","height":"140","weight":"42","age":"17","gender":"Female","bmi":"Healthy weight"},{"studentID":"1011","schoolID":"105","grade":"7","height":"124","weight":"39","age":"15","gender":"Female","bmi":"Overweight"},{"studentID":"1011","schoolID":"101","grade":"7","height":"124","weight":"39","age":"15","gender":"Female","bmi":"Overweight"},{"studentID":"1011","schoolID":"101","grade":"8","height":"124","weight":"39","age":"15","gender":"Female","bmi":"Overweight"}]
+    var stock = {"Protein":120,"Fat":90,"Carbohydrate":180}
+
+    localStorage.setItem('studentInfo', JSON.stringify(studentInfo))
+    localStorage.setItem('stock', JSON.stringify(stock))
+
     var addBtn = document.querySelectorAll("button")
     addBtn[0].addEventListener("click", addStudent)
     addBtn[1].addEventListener("click", addPacket)
     renderDOM()
     showStock()
 })
+
+var studentInfo = JSON.parse(localStorage.getItem("studentInfo")) 
+var stock = JSON.parse(localStorage.getItem("stock"))
+var activePage = 1
+
 
 function addStudent(params) {
     event.preventDefault()
@@ -24,7 +30,7 @@ function addStudent(params) {
     studentInfo.push({studentID: studentID, schoolID: schoolID, grade: grade, height: height, weight: weight, age: age, gender: gender, bmi: bmi})
     localStorage.setItem("studentInfo", JSON.stringify(studentInfo))
     var inputs = document.querySelectorAll("#addStudent input")
-    document.getElementById("addStudent").reset()
+    // document.getElementById("addStudent").reset()
     renderDOM()
 } 
 
@@ -50,15 +56,15 @@ function renderDOM(params) {
 }
 
 function chooseItems(params) {
-    var end = activePage * 8
-    var start = end - 8
+    var end = activePage * 3
+    var start = end - 3
     var list = studentInfo.slice(start, end)
     dispProd(list)
 }
 
 function addPage(params) {
 
-    if (studentInfo.length > 8) {
+    if (studentInfo.length > 3) {
         var nav = document.querySelector("nav")
         nav.removeAttribute("class")
         createPage()
@@ -96,7 +102,7 @@ function createPage(params) {
     var ul = document.querySelector("nav > ul")
     ul.innerHTML = ""
 
-    for (var i = 1; i <= Math.ceil(studentInfo.length / 8); i++) {
+    for (var i = 1; i <= Math.ceil(studentInfo.length / 3); i++) {
         var li = document.createElement("li")
         var btn = document.createElement("button")
         li.setAttribute("class", "page-item")
