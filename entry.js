@@ -24,7 +24,7 @@ function login(params) {
         console.log(x)
         console.log(adminCred[x])
         if (adminCred[x].username == username && adminCred[x].password == password) {
-            location = "admin.html"
+            location.href = "https://manideep39.github.io/Nutrition-Tracker/admin.html"
             return
         } 
     }
@@ -32,7 +32,7 @@ function login(params) {
     for (var y in careTakerCred) {
 
         if (careTakerCred[y].username == username && careTakerCred[y].password == password) {
-            location = "careTaker.html"
+            location.href = "https://manideep39.github.io/Nutrition-Tracker/careTaker.html"
         }
     }
 }
